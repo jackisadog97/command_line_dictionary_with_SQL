@@ -12,5 +12,8 @@ word = input("ENTER A WORD...\n")
 
 query = cursor.execute("SELECT * FROM Dictionary WHERE Expression= '%s'" % word)
 results = cursor.fetchall()
-for item in results:
-    print(item[1])
+if results:
+    for item in results:
+        print(item[1])
+else:
+    print("Word not found, please try again!")
